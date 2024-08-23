@@ -83,7 +83,13 @@ gotItBtn.onclick = () => {
   hintCons.forEach((hint) => {
     for (let i = 0; i < numberLength; i++) {
       const div = document.createElement("div");
-      div.classList.add("col-4", "d-flex", "justify-content-center", "h-100");
+      div.classList.add(
+        "col-4",
+        "d-flex",
+        "justify-content-center",
+        "align-items-center",
+        "h-100"
+      );
       hint.appendChild(div);
       hints.push(div);
     }
@@ -145,8 +151,7 @@ draft.addEventListener("click", (e) => {
   }
 });
 
-
-// Sound controller 
+// Sound controller
 function soundController(sound) {
   sound.currentTime = 0;
   sound.play();
