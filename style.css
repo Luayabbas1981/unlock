@@ -12,6 +12,14 @@ body {
   height: 100vh;
   overflow: hidden;
   user-select: none;
+  background: linear-gradient(
+    55deg,
+    #bcbcbc 0%,
+    #929292 24%,
+    #dddddd 77%,
+    #b1b0b0 101%,
+    #b8b8b8 100%
+  );
 }
 
 header {
@@ -105,16 +113,16 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2a80aa;
+  color: #196286;
   font-weight: bold;
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background: linear-gradient(
     55deg,
     #bcbcbc 0%,
-    #868484 24%,
+    #989898 24%,
     #f0f0f0 77%,
-    #767575 101%,
+    #9a9999 101%,
     #e0e0e0 100%
   );
 }
@@ -127,19 +135,19 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  color: #f44336;
+  color: var(--color);
   border: none;
   z-index: -100;
 }
 .enter::after {
-  content: "\f090";
+  content: "\f2f6";
   font-family: "Font Awesome 6 Free";
   font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  color: #0d7bd4;
+  color: var(--color);
   border: none;
   z-index: -100;
 }

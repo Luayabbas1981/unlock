@@ -3,6 +3,9 @@ const hintCons = document.querySelectorAll(".hint");
 const draft = document.querySelector(".draft");
 const entrance = document.querySelector(".entrance");
 const display = document.querySelector(".display");
+// Game sounds
+const pressBtn = document.querySelector(".btn-press");
+const deleteBtn = document.querySelector(".delete-press");
 // Game values
 let numberLength = 3;
 let rightNumberArray = [];
@@ -34,11 +37,13 @@ let hints = [];
     if (i === 10) {
       btn.style.cssText = `background-color:#ffc903`;
       btn.classList.add("enter");
+      btn.style.setProperty("--color", "#494848");
     } else if (i === 11) {
       btn.textContent = 0;
       btn.classList.add("entrance-num");
     } else if (i === 12) {
       btn.classList.add("delete");
+      btn.style.setProperty("--color", "#494848");
     } else {
       btn.textContent = i;
       btn.classList.add("entrance-num");
@@ -75,24 +80,40 @@ function genFaultNumbers(length) {}
 entrance.addEventListener("click", (e) => {
   let currentDisplayNumbers = display.textContent;
 
-  if (e.target.classList.contains("entrance-num")) {
+  if (
+    e.target.classList.contains("entrance-num") &&
+    display.textContent.length < numberLength
+  ) {
     display.textContent = currentDisplayNumbers + e.target.textContent;
     currentDisplayNumbers = display.textContent;
     e.target.style.color = "#89ff00";
     setTimeout(() => {
       e.target.style.color = "#2a80aa";
     }, 200);
+    soundController(pressBtn);
   }
-  if (e.target.classList.contains("delete")) {
+  if (e.target.classList.contains("delete") && display.textContent) {
     let displayArr = currentDisplayNumbers.split("");
     displayArr.pop();
     currentDisplayNumbers = displayArr.join("");
     display.textContent = currentDisplayNumbers;
+    e.target.style.setProperty("--color", "#ff5722");
+    setTimeout(() => {
+      e.target.style.setProperty("--color", "#494848");
+    }, 200);
+    soundController(deleteBtn);
   }
 });
 
 draft.addEventListener("click", (e) => {
   if (e.target.closest(".draft>div")) {
     e.target.classList.toggle("x-mark");
+    soundController(deleteBtn);
   }
 });
+
+function soundController(sound) {
+  sound.volume = 0.5;
+  sound.currentTime = 0;
+  sound.play();
+}
