@@ -57,16 +57,17 @@ main {
   height: 35%;
 }
 .hints-one {
-  height: 15%;
+  height: 20%;
 }
 .hints-two {
-  height: 50%;
+  height: 68%;
 }
 .hint-con {
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
 }
+
 .hints-two .hint-con {
   height: 20%;
 }
@@ -76,28 +77,30 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.hints-two .hint {
-  height: 50%;
-}
-.hint > div {
+.hint div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #17465c;
+  font-size: 1.8rem;
   outline: 1px solid #626669;
   outline-offset: -0.2rem;
   border-radius: 1rem;
 }
+.hints-one .hint {
+  height: 30%;
+}
+.hints-two .hint {
+  height: 45%;
+}
+
 .hint-text {
   text-align: center;
-  color: transparent;
-  background: linear-gradient(
-    194deg,
-    #e3e1e1 0%,
-    #3f3f3f 25%,
-    #4d4d4d 50%,
-    #575757 75%,
-    #929191 100%
-  );
-  background-clip: text;
-  font-size: 1.5rem;
+  color: #0d3749;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
 }
 .entrance,
 .draft {
@@ -186,7 +189,7 @@ main {
 .draft {
   background: url(./images/draft.png);
   background-size: 100% 100%;
-  color: #2489b9;
+  color: #186183;
   padding: 2rem;
   font-size: 2rem;
 }

@@ -80,14 +80,7 @@ gotItBtn.onclick = () => {
     }
     entrance.appendChild(div);
   }
-  hintCons.forEach((hint) => {
-    for (let i = 0; i < numberLength; i++) {
-      const div = document.createElement("div");
-      div.classList.add("col-4", "d-flex", "justify-content-center", "h-100");
-      hint.appendChild(div);
-      hints.push(div);
-    }
-  });
+
   genUniqueNumbers(numberLength);
 })();
 
