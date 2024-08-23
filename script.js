@@ -9,6 +9,7 @@ const instructions = document.querySelector(".instructions-con");
 // Game sounds
 const pressBtn = document.querySelector(".btn-press");
 const deleteBtn = document.querySelector(".delete-press");
+const introSound = document.querySelector(".opening-safe");
 // Game controls
 const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
@@ -17,7 +18,11 @@ let numberLength = 3;
 let rightNumberArray = [];
 let rightNumber = null;
 let hints = [];
+introSound.volume = 0.3;
+pressBtn.volume = 0.5;
+deleteBtn.volume = 0.5;
 
+soundController(introSound);
 startBtn.onclick = () => {
   const startBtnLetters = document.querySelectorAll(".start-btn div");
   startBtnLetters.forEach((letter) => {
@@ -141,7 +146,6 @@ draft.addEventListener("click", (e) => {
 });
 
 function soundController(sound) {
-  sound.volume = 0.5;
   sound.currentTime = 0;
   sound.play();
 }
