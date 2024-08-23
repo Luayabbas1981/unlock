@@ -11,7 +11,7 @@ const pressBtn = document.querySelector(".btn-press");
 const deleteBtn = document.querySelector(".delete-press");
 // Game controls
 const startBtn = document.querySelector(".start-btn");
-const gotItBtn = document.querySelector(".got-it-btn")
+const gotItBtn = document.querySelector(".got-it-btn");
 // Game values
 let numberLength = 3;
 let rightNumberArray = [];
@@ -26,18 +26,16 @@ startBtn.onclick = () => {
       letter.style.animation = "show-letters 1s ease-in-out reverse forwards";
       setTimeout(() => {
         introduction.classList.add("d-none");
-        instructions.classList.remove("d-none")
+        instructions.classList.remove("d-none");
       }, 1000);
     }, 5);
   });
 };
 
-gotItBtn.onclick =()=>{
-  gotItBtn.classList.add("d-none")
-  modalCon.classList.add("d-none")
-
-}
-
+gotItBtn.onclick = () => {
+  gotItBtn.classList.add("d-none");
+  modalCon.classList.add("d-none");
+};
 
 (function () {
   // Draft

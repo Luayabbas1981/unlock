@@ -38,9 +38,9 @@ header .row div {
   background: linear-gradient(
     194deg,
     #e3e1e1 0%,
-    #585858 25%,
+    #414040 25%,
     #8e8e8e 50%,
-    #575757 75%,
+    #2d2c2c 75%,
     #b3b0b0 100%
   );
   background-clip: text;
@@ -115,9 +115,9 @@ main {
   background: linear-gradient(
     43deg,
     #bcbcbc 0%,
-    #0e0e0e 9%,
-    #f0f0f0 61%,
-    #3a3a3a 94%,
+    #0e0e0e 5%,
+    #f0f0f0 72%,
+    #3a3a3a 97%,
     #e0e0e0 100%
   );
 }
