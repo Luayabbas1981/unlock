@@ -60,7 +60,7 @@ main {
   height: 50%;
 }
 .hint > div {
-  outline: 1px solid rgb(71, 166, 255);
+  outline: 1px solid #70757a;
   outline-offset: -0.2rem;
   border-radius: 1rem;
 }
@@ -180,30 +180,35 @@ main {
   background-color: #000;
 }
 
-.lock-con {
-  height: 35%;
-  translate: 0 -12%;
-}
-.lock {
-  rotate: 180deg;
-}
 .lock img {
-  width: 40%;
+  width: 100%;
+  height: 100%;
 }
 .lock-up img {
-  height: 70%;
+  height: 100%;
 }
 .lock-down {
   width: 100%;
   height: 40%;
   top: 50%;
-  left: 0%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: show-u 1s 6s linear forwards;
 }
 .lock-up {
   width: 100%;
-  height: 80%;
-  top: 0%;
-  left: 0%;
+  height: 100%;
+  top: 20%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.lock-con {
+  width: 8%;
+  height: 27%;
+  translate: 0 -30%;
+}
+.lock {
+  animation: rotate-lock 2s 1s ease-in-out forwards;
 }
 .letter {
   display: flex;
@@ -221,7 +226,27 @@ main {
     #e0e0e0 100%
   );
   background-clip: text;
+  scale: 0 1;
+  animation: show-letters 1s 4s ease-in-out forwards;
 }
 .letter img {
   width: 60%;
+}
+
+@keyframes rotate-lock {
+  to {
+    rotate: 180deg;
+  }
+}
+
+@keyframes show-letters {
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes show-u {
+  to {
+    translate: -50% 1000%;
+  }
 }
