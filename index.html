@@ -28,8 +28,13 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="row"></div>
+      <div class="container h-100">
+        <div
+          class="row h-100 justify-content-around align-items-center text-center"
+        >
+          <div class="col-4">LEVEL 1</div>
+          <div class="col-4">TIME --</div>
+        </div>
       </div>
     </header>
     <main>
@@ -42,7 +47,7 @@
         <div class="hints-one row">
           <div class="hint-con hint-con-1 col-3 row">
             <div class="hint col-12"></div>
-            <div class="hint-text col-12"></div>
+            <div class="hint-text col-12">TEST TEXT</div>
           </div>
           <div class="hint-con hint-con-2 col-3 row">
             <div class="hint col-12"></div>
@@ -101,10 +106,21 @@
             <div class="col-1">Y</div>
           </div>
         </div>
+        <div
+          class="instructions-con row w-100 h-50 justify-content-center align-items-center d-none"
+        >
+          <div class="instructions col-12 text-center">
+            <p>Carefully examine each clue. These will help you figure out the correct combination or password.</p>
+            <p>If you're confident that certain numbers are incorrect, mark them with an "X" by clicking on them in the draft area.</p>
+            <p>After considering the clues and eliminating incorrect numbers, type your guess into the input field.</p>
+            <p>Click the "Unlock" button to check if your guess is correct.</p>
+          </div>
+          <div class="got-it-btn col-2 text-center">GOT IT</div>
+        </div>
       </div>
     </div>
     <audio src="./sounds/press-btn.mp3" class="btn-press"></audio>
     <audio src="./sounds/delete.mp3" class="delete-press"></audio>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

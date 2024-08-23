@@ -14,10 +14,10 @@ body {
   user-select: none;
   background: linear-gradient(
     55deg,
-    #bcbcbc 0%,
-    #929292 24%,
-    #dddddd 77%,
-    #b1b0b0 101%,
+    #9b9999 0%,
+    #787676 24%,
+    #bcbaba 77%,
+    #989696 101%,
     #b8b8b8 100%
   );
   --letter-background: linear-gradient(
@@ -32,6 +32,19 @@ body {
 
 header {
   height: 10%;
+}
+header .row div {
+  color: transparent;
+  background: linear-gradient(
+    194deg,
+    #e3e1e1 0%,
+    #585858 25%,
+    #8e8e8e 50%,
+    #575757 75%,
+    #b3b0b0 100%
+  );
+  background-clip: text;
+  font-size: 2.5rem;
 }
 main {
   height: 90%;
@@ -68,12 +81,23 @@ main {
   height: 50%;
 }
 .hint > div {
-  outline: 1px solid #70757a;
+  outline: 1px solid #626669;
   outline-offset: -0.2rem;
   border-radius: 1rem;
 }
 .hint-text {
   text-align: center;
+  color: transparent;
+  background: linear-gradient(
+    194deg,
+    #e3e1e1 0%,
+    #3f3f3f 25%,
+    #4d4d4d 50%,
+    #575757 75%,
+    #929191 100%
+  );
+  background-clip: text;
+  font-size: 1.5rem;
 }
 .entrance,
 .draft {
@@ -201,7 +225,7 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  animation: show-u 1s 5.5s linear forwards;
+  animation: show-u 1s 6.5s linear forwards;
 }
 .lock-up {
   width: 100%;
@@ -239,8 +263,32 @@ main {
   background-clip: text;
   font-size: 3rem;
   scale: 0 1;
-  animation: show-letters 0.5s 7s ease-in-out forwards;
+  animation: show-letters 1s 7.5s ease-in-out forwards;
 }
+.instructions p,
+.got-it-btn {
+  color: transparent;
+  background: linear-gradient(
+    184deg,
+    #e3e1e1 0%,
+    #636262 25%,
+    #a4a3a3 50%,
+    #838080 75%,
+    #b3b0b0 100%
+  );
+  background-clip: text;
+  font-size: 2rem;
+}
+.instructions-con div {
+  scale: 1 0;
+  animation: show-instructions 1s 1s linear forwards;
+}
+.got-it-btn {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
 @keyframes rotate-lock {
   to {
     rotate: 180deg;
@@ -256,5 +304,11 @@ main {
 @keyframes show-u {
   to {
     translate: -50% 1000%;
+  }
+}
+
+@keyframes show-instructions {
+  to {
+    scale: 1;
   }
 }
