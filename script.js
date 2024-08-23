@@ -22,7 +22,6 @@ introSound.volume = 0.3;
 pressBtn.volume = 0.5;
 deleteBtn.volume = 0.5;
 
-soundController(introSound);
 startBtn.onclick = () => {
   const startBtnLetters = document.querySelectorAll(".start-btn div");
   startBtnLetters.forEach((letter) => {
@@ -35,6 +34,7 @@ startBtn.onclick = () => {
       }, 1000);
     }, 5);
   });
+  soundController(introSound);
 };
 
 gotItBtn.onclick = () => {
