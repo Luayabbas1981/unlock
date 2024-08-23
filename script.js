@@ -113,7 +113,7 @@ entrance.addEventListener("click", (e) => {
   ) {
     display.textContent = currentDisplayNumbers + e.target.textContent;
     currentDisplayNumbers = display.textContent;
-    e.target.style.color = "#89ff00";
+    e.target.style.color = "#ff8000";
     setTimeout(() => {
       e.target.style.color = "#2a80aa";
     }, 200);
