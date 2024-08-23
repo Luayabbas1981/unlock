@@ -21,14 +21,14 @@ startBtn.onclick = () => {
   startBtnLetters.forEach((letter) => {
     letter.style.animation = "none";
     setTimeout(() => {
-      letter.style.animation = "show-letters 1s ease-in-out reverse forwards";
+      letter.style.animation = "show-letters 0.5s ease-in-out reverse forwards";
       setTimeout(() => {
         introduction.classList.add("d-none");
       }, 1000);
-    }, 10);
+    }, 5);
   });
 };
-  
+
 (function () {
   // Draft
   for (let i = 0; i < 10; i++) {

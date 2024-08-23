@@ -239,7 +239,7 @@ main {
   background-clip: text;
   font-size: 3rem;
   scale: 0 1;
-  animation: show-letters 1s 7s ease-in-out forwards;
+  animation: show-letters 0.5s 7s ease-in-out forwards;
 }
 @keyframes rotate-lock {
   to {
