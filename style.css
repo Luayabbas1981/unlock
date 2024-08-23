@@ -5,7 +5,7 @@
 
 * {
   box-sizing: border-box;
- font-family: "Squada One", sans-serif;
+  font-family: "Squada One", sans-serif;
 }
 
 body {
@@ -71,8 +71,15 @@ main {
   padding: 1rem;
   border-radius: 2.5rem;
   background-color: #b5b5ff;
-  box-shadow: inset 0px 0px 18px 8px #8080f7;
   scale: 0.8 1;
+  background: linear-gradient(
+    43deg,
+    #bcbcbc 0%,
+    #0e0e0e 9%,
+    #f0f0f0 61%,
+    #3a3a3a 94%,
+    #e0e0e0 100%
+  );
 }
 .entrance > div:not(.display) {
   margin-top: -1rem;
@@ -80,8 +87,8 @@ main {
   cursor: pointer;
 }
 .display {
-  background-color: #43468d;
-  color: #e8ff00;
+  background-color: #151622;
+  color: #ff8000;
   border-radius: 1rem;
   font-family: "entrance";
   font-size: 3rem;
@@ -98,15 +105,20 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #2a80aa;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   border-radius: 0.5rem;
-  box-shadow: 4px 4px 7px 0px #2f749e;
+  background: linear-gradient(
+    55deg,
+    #bcbcbc 0%,
+    #868484 24%,
+    #f0f0f0 77%,
+    #767575 101%,
+    #e0e0e0 100%
+  );
 }
-.enter {
-  font-size: 0.8rem;
-}
+
 .delete::after {
   content: "\f55a";
   font-family: "Font Awesome 6 Free";
@@ -115,7 +127,19 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  color: #fff;
+  color: #f44336;
+  border: none;
+  z-index: -100;
+}
+.enter::after {
+  content: "\f090";
+  font-family: "Font Awesome 6 Free";
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  color: #0d7bd4;
   border: none;
   z-index: -100;
 }
@@ -155,10 +179,10 @@ main {
 .lock {
   rotate: 180deg;
 }
-.lock img{
+.lock img {
   width: 40%;
 }
-.lock-up img{
+.lock-up img {
   height: 70%;
 }
 .lock-down {
@@ -173,10 +197,10 @@ main {
   top: 0%;
   left: 0%;
 }
-.letter{
- display: flex;
- justify-content: center;
- align-items: center;
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 10rem;
   font-weight: bold;
   color: transparent;
@@ -190,6 +214,6 @@ main {
   );
   background-clip: text;
 }
-.letter img{
+.letter img {
   width: 60%;
 }

@@ -33,16 +33,12 @@ let hints = [];
 
     if (i === 10) {
       btn.style.cssText = `background-color:#ffc903`;
-      btn.classList.add("delete");
+      btn.classList.add("enter");
     } else if (i === 11) {
       btn.textContent = 0;
       btn.classList.add("entrance-num");
     } else if (i === 12) {
-      btn.textContent = "ENTER";
-      btn.style.cssText = `
-      background-color:#f952a3;
-      `;
-      btn.classList.add("enter");
+      btn.classList.add("delete");
     } else {
       btn.textContent = i;
       btn.classList.add("entrance-num");
@@ -54,11 +50,10 @@ let hints = [];
       const div = document.createElement("div");
       div.classList.add("col-4", "d-flex", "justify-content-center", "h-100");
       hint.appendChild(div);
-      hints.push(div)
+      hints.push(div);
     }
   });
   genUniqueNumbers(numberLength);
-  
 })();
 
 // Create right number
@@ -74,9 +69,7 @@ function genUniqueNumbers(length) {
 }
 
 // create fault numbers
-function genFaultNumbers(length) {
-  
-}
+function genFaultNumbers(length) {}
 
 // Events
 entrance.addEventListener("click", (e) => {
@@ -85,6 +78,10 @@ entrance.addEventListener("click", (e) => {
   if (e.target.classList.contains("entrance-num")) {
     display.textContent = currentDisplayNumbers + e.target.textContent;
     currentDisplayNumbers = display.textContent;
+    e.target.style.color = "#89ff00";
+    setTimeout(() => {
+      e.target.style.color = "#2a80aa";
+    }, 200);
   }
   if (e.target.classList.contains("delete")) {
     let displayArr = currentDisplayNumbers.split("");
