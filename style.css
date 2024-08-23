@@ -82,7 +82,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #17465c;
+  color: #123b4e;
   font-size: 1.8rem;
   outline: 1px solid #626669;
   outline-offset: -0.2rem;
@@ -97,7 +97,7 @@ main {
 
 .hint-text {
   text-align: center;
-  color: #0d3749;
+  color: #092e3d;
   font-size: 1rem;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
