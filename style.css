@@ -20,6 +20,14 @@ body {
     #b1b0b0 101%,
     #b8b8b8 100%
   );
+  --letter-background: linear-gradient(
+    177deg,
+    #bcbcbc 0%,
+    #0e0e0e 25%,
+    #f0f0f0 50%,
+    #3a3a3a 75%,
+    #e0e0e0 100%
+  );
 }
 
 header {
@@ -193,7 +201,7 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  animation: show-u 1s 6s linear forwards;
+  animation: show-u 1s 5.5s linear forwards;
 }
 .lock-up {
   width: 100%;
@@ -216,23 +224,23 @@ main {
   align-items: center;
   font-size: 10rem;
   font-weight: bold;
-  color: transparent;
-  background: linear-gradient(
-    177deg,
-    #bcbcbc 0%,
-    #0e0e0e 25%,
-    #f0f0f0 50%,
-    #3a3a3a 75%,
-    #e0e0e0 100%
-  );
-  background-clip: text;
   scale: 0 1;
   animation: show-letters 1s 4s ease-in-out forwards;
 }
 .letter img {
   width: 60%;
 }
-
+.start-btn {
+  cursor: pointer;
+}
+.start-btn div {
+  color: transparent;
+  background: var(--letter-background);
+  background-clip: text;
+  font-size: 3rem;
+  scale: 0 1;
+  animation: show-letters 1s 7s ease-in-out forwards;
+}
 @keyframes rotate-lock {
   to {
     rotate: 180deg;

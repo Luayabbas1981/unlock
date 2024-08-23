@@ -3,15 +3,32 @@ const hintCons = document.querySelectorAll(".hint");
 const draft = document.querySelector(".draft");
 const entrance = document.querySelector(".entrance");
 const display = document.querySelector(".display");
+const modalCon = document.querySelector(".modal-con");
+const introduction = document.querySelector(".introduction");
 // Game sounds
 const pressBtn = document.querySelector(".btn-press");
 const deleteBtn = document.querySelector(".delete-press");
+// Game controls
+const startBtn = document.querySelector(".start-btn");
 // Game values
 let numberLength = 3;
 let rightNumberArray = [];
 let rightNumber = null;
 let hints = [];
 
+startBtn.onclick = () => {
+  const startBtnLetters = document.querySelectorAll(".start-btn div");
+  startBtnLetters.forEach((letter) => {
+    letter.style.animation = "none";
+    setTimeout(() => {
+      letter.style.animation = "show-letters 1s ease-in-out reverse forwards";
+      setTimeout(() => {
+        introduction.classList.add("d-none");
+      }, 1000);
+    }, 10);
+  });
+};
+  
 (function () {
   // Draft
   for (let i = 0; i < 10; i++) {
