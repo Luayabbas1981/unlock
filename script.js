@@ -145,6 +145,8 @@ draft.addEventListener("click", (e) => {
   }
 });
 
+
+// Sound controller 
 function soundController(sound) {
   sound.currentTime = 0;
   sound.play();
