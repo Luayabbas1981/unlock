@@ -1,5 +1,6 @@
 // Game elements
 const hintCons = document.querySelectorAll(".hint");
+const hintNum = document.querySelectorAll(".hint div");
 const draft = document.querySelector(".draft");
 const entrance = document.querySelector(".entrance");
 const display = document.querySelector(".display");
@@ -40,6 +41,7 @@ startBtn.onclick = () => {
 gotItBtn.onclick = () => {
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
+  introSound.muted = true;
 };
 
 (function () {
@@ -135,6 +137,11 @@ draft.addEventListener("click", (e) => {
   e.target.classList.toggle("deleted");
   if (e.target.closest(".draft>div")) {
     e.target.classList.toggle("x-mark");
+    hintNum.forEach((hint) => {
+      e.target.textContent === hint.textContent
+        ? hint.classList.add("x-mark")
+        : "";
+    });
   }
 });
 
