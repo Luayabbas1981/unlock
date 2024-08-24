@@ -309,11 +309,11 @@ main {
   body {
     background: linear-gradient(
       55deg,
-      #d6d6d6 0%,
-      #bebebe 24%,
-      #dddddd 77%,
-      #b4b2b2 101%,
-      #d3d2d2 100%
+      #fdfdfd 0%,
+      #d3d2d2 24%,
+      #ffffff 77%,
+      #d2d2d2 101%,
+      #ffffff 100%
     );
   }
   header {
