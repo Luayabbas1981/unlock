@@ -15,6 +15,7 @@ const introSound = document.querySelector(".opening-safe");
 const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
 // Game values
+let draftNum = null;
 let numberLength = 3;
 let rightNumberArray = [];
 let rightNumber = null;
@@ -23,29 +24,9 @@ introSound.volume = 0.3;
 pressBtn.volume = 0.5;
 deleteBtn.volume = 0.5;
 
-startBtn.onclick = () => {
-  const startBtnLetters = document.querySelectorAll(".start-btn div");
-  startBtnLetters.forEach((letter) => {
-    letter.style.animation = "none";
-    setTimeout(() => {
-      letter.style.animation = "show-letters 1s ease-in-out reverse forwards";
-      setTimeout(() => {
-        introduction.classList.add("d-none");
-        instructions.classList.remove("d-none");
-      }, 1000);
-    }, 5);
-  });
-  soundController(introSound);
-};
-
-gotItBtn.onclick = () => {
-  gotItBtn.classList.add("d-none");
-  modalCon.classList.add("d-none");
-  introSound.muted = true;
-};
-
 (function () {
   // Draft
+  draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))];
   for (let i = 0; i < 10; i++) {
     const div = document.createElement("div");
     div.classList.add(
@@ -55,7 +36,7 @@ gotItBtn.onclick = () => {
       "align-items-center",
       "position-relative"
     );
-    div.textContent = i;
+    div.textContent = draftNum[i];
     draft.appendChild(div);
   }
   // entrance
@@ -86,6 +67,26 @@ gotItBtn.onclick = () => {
   genUniqueNumbers(numberLength);
 })();
 
+startBtn.onclick = () => {
+  const startBtnLetters = document.querySelectorAll(".start-btn div");
+  startBtnLetters.forEach((letter) => {
+    letter.style.animation = "none";
+    setTimeout(() => {
+      letter.style.animation = "show-letters 1s ease-in-out reverse forwards";
+      setTimeout(() => {
+        introduction.classList.add("d-none");
+        instructions.classList.remove("d-none");
+      }, 1000);
+    }, 5);
+  });
+  soundController(introSound);
+};
+
+gotItBtn.onclick = () => {
+  gotItBtn.classList.add("d-none");
+  modalCon.classList.add("d-none");
+  introSound.muted = true;
+};
 // Create right number
 function genUniqueNumbers(length) {
   const uniqueNumbers = new Set();
@@ -139,7 +140,7 @@ draft.addEventListener("click", (e) => {
     e.target.classList.toggle("x-mark");
     hintNum.forEach((hint) => {
       e.target.textContent === hint.textContent
-        ? hint.classList.add("x-mark")
+        ? hint.classList.toggle("x-mark")
         : "";
     });
   }

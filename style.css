@@ -88,6 +88,7 @@ main {
   outline: 1px solid #626669;
   outline-offset: -0.2rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 .hints-one .hint {
   height: 30%;
@@ -196,6 +197,7 @@ main {
 }
 .draft > div {
   cursor: pointer;
+  
 }
 .draft div:last-child {
   margin: auto;
