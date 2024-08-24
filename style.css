@@ -200,9 +200,6 @@ main {
 .draft > div {
   cursor: pointer;
 }
-.draft div:last-child {
-  margin: auto;
-}
 
 .x-mark::before {
   content: "\58";

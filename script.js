@@ -23,6 +23,7 @@ let numberLength = 3;
 let rightNumberArray = [];
 let rightNumber = null;
 let hints = [];
+let uniqueArr;
 introSound.volume = 0.3;
 pressBtn.volume = 0.5;
 deleteBtn.volume = 1;
@@ -51,10 +52,10 @@ deleteBtn.volume = 1;
   draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))].sort(
     (a, b) => a - b
   );
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < uniqueArr.length; i++) {
     const div = document.createElement("div");
     div.classList.add(
-      "col-4",
+      "col-6",
       "d-flex",
       "justify-content-center",
       "align-items-center",
@@ -201,6 +202,7 @@ function getRandomizedNumbersArray(numbers) {
   hintNum.forEach((hint, index) => {
     hint.textContent = newNumbersArray[index];
   });
+  uniqueArr = [...new Set(newNumbersArray)];
   const index8 =
     newNumbersArray[8] !== undefined ? String(newNumbersArray[8]) : "";
   const index5 =
