@@ -14,11 +14,11 @@ body {
   overflow: hidden;
   background: linear-gradient(
     55deg,
-    #9b9999 0%,
-    #9a9999 24%,
-    #bcbaba 77%,
-    #b6b4b4 101%,
-    #b8b8b8 100%
+    #dad8d8 0%,
+    #ababab 24%,
+    #d5d2d2 77%,
+    #ededed 101%,
+    #dedddd 100%
   );
   --letter-background: linear-gradient(
     177deg,
@@ -58,7 +58,7 @@ main {
 }
 .safe {
   background: url(./images/safe-locked.png) center no-repeat;
-  background-size: 65% 100%;
+  background-size: 60% 100%;
 }
 .hints-one {
   height: 20%;
