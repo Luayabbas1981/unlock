@@ -216,9 +216,21 @@ main {
   background-color: #000;
 }
 .lock-con {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
   width: 8%;
-  height: 32%;
-  translate: 0 -40%;
+  height: 35%;
+  animation: move-lock 1s 3.5s linear forwards;
+}
+@keyframes move-lock {
+  to {
+    left: 2%;
+    top: 18%;
+    width: 8%;
+    height: 32%;
+  }
 }
 .lock {
   animation: rotate-lock 2s 1s ease-in-out forwards;
@@ -236,7 +248,7 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  animation: show-u 1s 6.5s linear forwards;
+  animation: show-u 1s 7s linear forwards;
 }
 .lock-up {
   width: 100%;
@@ -253,7 +265,7 @@ main {
   font-size: 10rem;
   font-weight: bold;
   scale: 0 1;
-  animation: show-letters 1s 4s ease-in-out forwards;
+  animation: show-letters 1s 5.5s ease-in-out forwards;
 }
 .letter img {
   width: 60%;
@@ -267,7 +279,7 @@ main {
   background-clip: text;
   font-size: 3rem;
   scale: 0 1;
-  animation: show-letters 1s 7.5s ease-in-out forwards;
+  animation: show-letters 1s 8s ease-in-out forwards;
 }
 .instructions p,
 .got-it-btn {
@@ -319,10 +331,22 @@ main {
   .lock-con {
     width: 15%;
     height: 12%;
-    translate: 0% -36%;
+    scale: 1.5;
+  }
+  @keyframes move-lock {
+    to {
+      left: 4%;
+      top: 21%;
+      width: 15%;
+      height: 10%;
+      scale: 1;
+    }
   }
   .lock-down {
     height: 60%;
+  }
+  .introduction {
+    margin-left: 6%;
   }
   .letter img {
     width: 100%;
@@ -393,7 +417,7 @@ main {
 
 @keyframes show-u {
   to {
-    translate: -50% 1000%;
+    translate: -50% 2000%;
   }
 }
 
