@@ -300,7 +300,7 @@ main {
     font-size: 1.5rem;
   }
   .safe-con {
-    height: 25%;
+    height: 20%;
   }
   .lock-con {
     width: 15%;
@@ -323,20 +323,26 @@ main {
     font-size: 1.2rem;
   }
   .hints-one {
-    height: 25%;
+    height: 30%;
   }
   .hints-one .hint {
-    height: 30%;
+    height: 25%;
   }
   .hint div {
     font-size: 0.8rem;
+    color: #fff;
   }
   .hint-text {
-    font-size: 0.55rem;
+    height: 55%;
+    font-size: 0.6rem;
+    color: #01161f;
   }
 
   .hints-two .hint-con {
-    height: 17%;
+    height: 20%;
+  }
+  .hints-two .hint-text {
+    height: 35%;
   }
   .hints-two .hint {
     height: 40%;
