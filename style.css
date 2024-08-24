@@ -216,8 +216,8 @@ main {
 }
 .lock-con {
   width: 8%;
-  height: 27%;
-  translate: 0 -37%;
+  height: 32%;
+  translate: 0 -40%;
 }
 .lock {
   animation: rotate-lock 2s 1s ease-in-out forwards;
