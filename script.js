@@ -26,7 +26,10 @@ deleteBtn.volume = 0.5;
 
 (function () {
   // Draft
-  draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))];
+  // Sorting numerically (if text content are numbers)
+  draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))].sort(
+    (a, b) => a - b
+  );
   for (let i = 0; i < 10; i++) {
     const div = document.createElement("div");
     div.classList.add(
