@@ -15,9 +15,9 @@ body {
   background: linear-gradient(
     55deg,
     #9b9999 0%,
-    #787676 24%,
+    #9a9999 24%,
     #bcbaba 77%,
-    #989696 101%,
+    #b6b4b4 101%,
     #b8b8b8 100%
   );
   --letter-background: linear-gradient(
@@ -36,10 +36,10 @@ header {
 header .row div {
   color: transparent;
   background: linear-gradient(
-    5deg,
+    194deg,
     #e3e1e1 0%,
     #414040 25%,
-    #7e7c7c 50%,
+    #8e8e8e 50%,
     #2d2c2c 75%,
     #b3b0b0 100%
   );
@@ -57,16 +57,17 @@ main {
   height: 35%;
 }
 .hints-one {
-  height: 15%;
+  height: 20%;
 }
 .hints-two {
-  height: 50%;
+  height: 68%;
 }
 .hint-con {
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
 }
+
 .hints-two .hint-con {
   height: 20%;
 }
@@ -75,31 +76,31 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: #fff;
 }
-
-.hints-two .hint {
-  height: 50%;
-}
-.hint > div {
+.hint div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #123b4e;
+  font-size: 1.8rem;
   outline: 1px solid #626669;
   outline-offset: -0.2rem;
   border-radius: 1rem;
 }
+.hints-one .hint {
+  height: 30%;
+}
+.hints-two .hint {
+  height: 45%;
+}
+
 .hint-text {
   text-align: center;
-  color: transparent;
-  background: linear-gradient(
-    194deg,
-    #e3e1e1 0%,
-    #3f3f3f 25%,
-    #4d4d4d 50%,
-    #575757 75%,
-    #929191 100%
-  );
-  background-clip: text;
-  font-size: 1.5rem;
+  color: #092e3d;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
 }
 .entrance,
 .draft {
@@ -188,7 +189,7 @@ main {
 .draft {
   background: url(./images/draft.png);
   background-size: 100% 100%;
-  color: #2489b9;
+  color: #186183;
   padding: 2rem;
   font-size: 2rem;
 }
