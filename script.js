@@ -90,6 +90,7 @@ deleteBtn.volume = 1;
   }
 
   genUniqueNumbers(numberLength);
+  soundController(introSound);
 })();
 
 startBtn.onclick = () => {
@@ -104,7 +105,6 @@ startBtn.onclick = () => {
       }, 1000);
     }, 5);
   });
-  soundController(introSound);
 };
 
 gotItBtn.onclick = () => {
