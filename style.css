@@ -332,13 +332,17 @@ main {
     font-size: 0.8rem;
   }
   .hint-text {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+  }
+
+  .hints-two .hint-con {
+    height: 17%;
   }
   .hints-two .hint {
     height: 40%;
   }
   .hints-two {
-    height: 50%;
+    height: 55%;
   }
   .draft {
     font-size: 1rem;
