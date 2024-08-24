@@ -329,12 +329,14 @@ main {
     background-size: 85% 100%;
   }
   .lock-con {
+    margin-left: -5%;
     width: 15%;
     height: 12%;
-    scale: 1.5;
+    scale: 2;
   }
   @keyframes move-lock {
     to {
+      margin-left: 0;
       left: 0%;
       top: 21%;
       width: 15%;
