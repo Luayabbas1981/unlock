@@ -335,7 +335,7 @@ main {
   .hint-text {
     height: 55%;
     font-size: 0.6rem;
-    color: #fff;
+    color: #000;
   }
 
   .hints-two .hint-con {
