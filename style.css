@@ -88,7 +88,6 @@ main {
   outline: 1px solid #626669;
   outline-offset: -0.2rem;
   border-radius: 1rem;
-  cursor: pointer;
 }
 .hints-one .hint {
   height: 30%;
@@ -197,7 +196,6 @@ main {
 }
 .draft > div {
   cursor: pointer;
-  
 }
 .draft div:last-child {
   margin: auto;
@@ -217,7 +215,14 @@ main {
 .modal-con {
   background-color: #000;
 }
-
+.lock-con {
+  width: 8%;
+  height: 27%;
+  translate: 0 -30%;
+}
+.lock {
+  animation: rotate-lock 2s 1s ease-in-out forwards;
+}
 .lock img {
   width: 100%;
   height: 100%;
@@ -240,14 +245,7 @@ main {
   left: 50%;
   translate: -50% -50%;
 }
-.lock-con {
-  width: 8%;
-  height: 27%;
-  translate: 0 -30%;
-}
-.lock {
-  animation: rotate-lock 2s 1s ease-in-out forwards;
-}
+
 .letter {
   display: flex;
   justify-content: center;
