@@ -286,11 +286,11 @@ main {
   color: transparent;
   background: linear-gradient(
     184deg,
-    #e3e1e1 0%,
-    #636262 25%,
-    #a4a3a3 50%,
-    #838080 75%,
-    #b3b0b0 100%
+    #eae8e8 0%,
+    #9a9a9a 25%,
+    #d1cece 50%,
+    #bcbcbc 75%,
+    #dedede 100%
   );
   background-clip: text;
   font-size: 2rem;
