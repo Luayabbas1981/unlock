@@ -45,6 +45,7 @@ deleteBtn.volume = 1;
   });
   hintNum = document.querySelectorAll(".hint div");
   getRandomizedNumbersArray(numbersMapArr);
+
   // Draft
   // Sorting numerically (if text content are numbers)
   draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))].sort(
@@ -194,4 +195,12 @@ function getRandomizedNumbersArray(numbers) {
   hintNum.forEach((hint, index) => {
     hint.textContent = newNumbersArray[index];
   });
+  const index8 =
+    newNumbersArray[8] !== undefined ? String(newNumbersArray[8]) : "";
+  const index5 =
+    newNumbersArray[5] !== undefined ? String(newNumbersArray[5]) : "";
+  const index2 =
+    newNumbersArray[2] !== undefined ? String(newNumbersArray[2]) : "";
+
+  rightNumber = index8 + index5 + index2;
 }
