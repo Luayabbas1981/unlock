@@ -15,9 +15,9 @@ body {
   background: linear-gradient(
     55deg,
     #9b9999 0%,
-    #787676 24%,
+    #9a9999 24%,
     #bcbaba 77%,
-    #989696 101%,
+    #b6b4b4 101%,
     #b8b8b8 100%
   );
   --letter-background: linear-gradient(
