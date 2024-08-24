@@ -22,7 +22,7 @@ let rightNumber = null;
 let hints = [];
 introSound.volume = 0.3;
 pressBtn.volume = 0.5;
-deleteBtn.volume = 0.5;
+deleteBtn.volume = 1;
 
 (function () {
   // Draft
