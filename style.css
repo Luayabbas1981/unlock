@@ -335,7 +335,7 @@ main {
   }
   @keyframes move-lock {
     to {
-      left: 4%;
+      left: 0%;
       top: 21%;
       width: 15%;
       height: 10%;
