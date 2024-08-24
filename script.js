@@ -135,9 +135,9 @@ entrance.addEventListener("click", (e) => {
   ) {
     display.textContent = currentDisplayNumbers + e.target.textContent;
     currentDisplayNumbers = display.textContent;
-    e.target.style.cssText = `color:#ff8000; scale:0.85;`;
+    e.target.style.cssText = `color:#ff8000; scale:0.85;box-shadow: 2px 2px 8px 0px black`;
     setTimeout(() => {
-      e.target.style.cssText = `color:#2a80aa; scale:1;`;
+      e.target.style.cssText = `color:#2a80aa; scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
     soundController(pressBtn);
   }
@@ -147,10 +147,10 @@ entrance.addEventListener("click", (e) => {
     currentDisplayNumbers = displayArr.join("");
     display.textContent = currentDisplayNumbers;
     e.target.style.setProperty("--color", "#ff5722");
-    e.target.style.cssText += `scale:0.85;`;
+    e.target.style.cssText += `scale:0.85;box-shadow: 2px 2px 8px 0px black`;
     setTimeout(() => {
       e.target.style.setProperty("--color", "#494848");
-      e.target.style.cssText += `scale:1;`;
+      e.target.style.cssText += `scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
     soundController(deleteBtn);
   }
