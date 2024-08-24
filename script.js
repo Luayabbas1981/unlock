@@ -1,12 +1,15 @@
 // Game elements
 const hintCons = document.querySelectorAll(".hint");
-const hintNum = document.querySelectorAll(".hint div");
 const draft = document.querySelector(".draft");
 const entrance = document.querySelector(".entrance");
 const display = document.querySelector(".display");
 const modalCon = document.querySelector(".modal-con");
 const introduction = document.querySelector(".introduction");
 const instructions = document.querySelector(".instructions-con");
+const numbersMapArr = [4, 3, 2, 4, 5, 9, 0, 3, 1, 2, 1, 4, 0, 7, 3];
+let numbersUsedArr = [];
+let hintNum = [];
+
 // Game sounds
 const pressBtn = document.querySelector(".btn-press");
 const deleteBtn = document.querySelector(".delete-press");
@@ -25,6 +28,23 @@ pressBtn.volume = 0.5;
 deleteBtn.volume = 1;
 
 (function () {
+  // Hunts
+  hintCons.forEach((hint) => {
+    for (let i = 0; i < numberLength; i++) {
+      const div = document.createElement("div");
+      div.classList.add(
+        "col-4",
+        "d-flex",
+        "justify-content-center",
+        "h-100",
+        "position-relative"
+      );
+      hint.appendChild(div);
+      hints.push(div);
+    }
+  });
+  hintNum = document.querySelectorAll(".hint div");
+  getRandomizedNumbersArray(numbersMapArr);
   // Draft
   // Sorting numerically (if text content are numbers)
   draftNum = [...new Set([...hintNum].map((hint) => hint.textContent))].sort(
@@ -152,4 +172,24 @@ draft.addEventListener("click", (e) => {
 function soundController(sound) {
   sound.currentTime = 0;
   sound.play();
+}
+
+function getRandomizedNumbersArray(numbers) {
+  let numberMap = new Map();
+  let newNumbersArray = [];
+  numbers.forEach((_, index) => {
+    const originalNumber = numbers[index];
+    if (!numberMap.has(originalNumber)) {
+      let newNumber;
+      do {
+        newNumber = Math.floor(Math.random() * 10);
+      } while (Array.from(numberMap.values()).includes(newNumber));
+
+      numberMap.set(originalNumber, newNumber);
+    }
+    newNumbersArray.push(numberMap.get(originalNumber));
+  });
+  hintNum.forEach((hint, index) => {
+    hint.textContent = newNumbersArray[index];
+  });
 }
