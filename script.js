@@ -1,5 +1,6 @@
 // Game elements
 const hintCons = document.querySelectorAll(".hint");
+const hintNum = document.querySelectorAll(".hint div");
 const draft = document.querySelector(".draft");
 const entrance = document.querySelector(".entrance");
 const display = document.querySelector(".display");
@@ -40,6 +41,7 @@ startBtn.onclick = () => {
 gotItBtn.onclick = () => {
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
+  introSound.muted = true;
 };
 
 (function () {
@@ -80,20 +82,7 @@ gotItBtn.onclick = () => {
     }
     entrance.appendChild(div);
   }
-  hintCons.forEach((hint) => {
-    for (let i = 0; i < numberLength; i++) {
-      const div = document.createElement("div");
-      div.classList.add(
-        "col-4",
-        "d-flex",
-        "justify-content-center",
-        "align-items-center",
-        "h-100"
-      );
-      hint.appendChild(div);
-      hints.push(div);
-    }
-  });
+
   genUniqueNumbers(numberLength);
 })();
 
@@ -148,10 +137,14 @@ draft.addEventListener("click", (e) => {
   e.target.classList.toggle("deleted");
   if (e.target.closest(".draft>div")) {
     e.target.classList.toggle("x-mark");
+    hintNum.forEach((hint) => {
+      e.target.textContent === hint.textContent
+        ? hint.classList.add("x-mark")
+        : "";
+    });
   }
 });
 
-// Sound controller
 function soundController(sound) {
   sound.currentTime = 0;
   sound.play();
