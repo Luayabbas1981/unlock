@@ -56,6 +56,10 @@ main {
 .safe-con {
   height: 35%;
 }
+.safe {
+  background: url(./images/safe-locked.png) center no-repeat;
+  background-size: 65% 100%;
+}
 .hints-one {
   height: 20%;
 }
@@ -301,6 +305,9 @@ main {
   }
   .safe-con {
     height: 20%;
+  }
+  .safe {
+    background-size: 85% 100%;
   }
   .lock-con {
     width: 15%;
