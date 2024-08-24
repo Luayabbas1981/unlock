@@ -217,7 +217,7 @@ main {
 .lock-con {
   width: 8%;
   height: 27%;
-  translate: 0 -30%;
+  translate: 0 -37%;
 }
 .lock {
   animation: rotate-lock 2s 1s ease-in-out forwards;
@@ -227,7 +227,7 @@ main {
   height: 100%;
 }
 .lock-up img {
-  height: 100%;
+  height: 80%;
 }
 .lock-down {
   width: 100%;
@@ -292,6 +292,64 @@ main {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  header .row div {
+    font-size: 1.5rem;
+  }
+  .safe-con {
+    height: 25%;
+  }
+  .lock-con {
+    width: 15%;
+    height: 12%;
+    translate: 0% -36%;
+  }
+  .lock-down {
+    height: 60%;
+  }
+  .letter img {
+    width: 100%;
+  }
+  .start-btn div {
+    font-size: 2rem;
+  }
+  .instructions p {
+    font-size: 1rem;
+  }
+  .got-it-btn {
+    font-size: 1.2rem;
+  }
+  .hints-one .hint {
+    height: 20%;
+  }
+  .hint div {
+    font-size: 0.8rem;
+  }
+  .hint-text {
+    font-size: 0.5rem;
+  }
+  .hints-two .hint {
+    height: 30%;
+  }
+  .hints-two {
+    height: 50%;
+  }
+  .draft {
+    font-size: 1rem;
+  }
+  .entrance > div {
+    height: 25%;
+    translate: 0 -35%;
+    margin-bottom: 0.2rem;
+  }
+  .entrance-btn {
+    font-size: 0.7rem;
+  }
+  .display {
+    font-size: 1.5rem;
+    translate: 0 -25%;
+  }
+}
 @keyframes rotate-lock {
   to {
     rotate: 180deg;
