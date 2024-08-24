@@ -114,7 +114,6 @@ main {
 .entrance {
   padding: 1rem;
   border-radius: 2.5rem;
-  background-color: #b5b5ff;
   scale: 0.8 1;
   background: linear-gradient(
     43deg,
@@ -145,7 +144,6 @@ main {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  background-color: #72c2f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +159,7 @@ main {
     #9a9999 101%,
     #e0e0e0 100%
   );
+  box-shadow: 4px 6px 12px 0px black;
 }
 
 .delete::after {

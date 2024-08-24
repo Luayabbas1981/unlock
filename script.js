@@ -135,9 +135,9 @@ entrance.addEventListener("click", (e) => {
   ) {
     display.textContent = currentDisplayNumbers + e.target.textContent;
     currentDisplayNumbers = display.textContent;
-    e.target.style.color = "#ff8000";
+    e.target.style.cssText = `color:#ff8000; scale:0.85;`;
     setTimeout(() => {
-      e.target.style.color = "#2a80aa";
+      e.target.style.cssText = `color:#2a80aa; scale:1;`;
     }, 200);
     soundController(pressBtn);
   }
@@ -147,8 +147,10 @@ entrance.addEventListener("click", (e) => {
     currentDisplayNumbers = displayArr.join("");
     display.textContent = currentDisplayNumbers;
     e.target.style.setProperty("--color", "#ff5722");
+    e.target.style.cssText += `scale:0.85;`;
     setTimeout(() => {
       e.target.style.setProperty("--color", "#494848");
+      e.target.style.cssText += `scale:1;`;
     }, 200);
     soundController(deleteBtn);
   }
