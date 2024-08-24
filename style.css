@@ -297,6 +297,16 @@ main {
 }
 
 @media (max-width: 767px) {
+  body {
+    background: linear-gradient(
+      55deg,
+      #d6d6d6 0%,
+      #bebebe 24%,
+      #dddddd 77%,
+      #b4b2b2 101%,
+      #d3d2d2 100%
+    );
+  }
   header {
     height: 7%;
   }
@@ -337,7 +347,6 @@ main {
   }
   .hint div {
     font-size: 0.8rem;
-    color: #fff;
   }
   .hint-text {
     height: 55%;
