@@ -293,7 +293,7 @@ main {
 }
 
 @media (max-width: 767px) {
-  header{
+  header {
     height: 7%;
   }
   header .row div {
@@ -322,17 +322,20 @@ main {
   .got-it-btn {
     font-size: 1.2rem;
   }
+  .hints-one {
+    height: 25%;
+  }
   .hints-one .hint {
-    height: 20%;
+    height: 30%;
   }
   .hint div {
     font-size: 0.8rem;
   }
   .hint-text {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
   .hints-two .hint {
-    height: 30%;
+    height: 40%;
   }
   .hints-two {
     height: 50%;
