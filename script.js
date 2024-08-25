@@ -6,7 +6,7 @@ const display = document.querySelector(".display");
 const modalCon = document.querySelector(".modal-con");
 const introduction = document.querySelector(".introduction");
 const instructions = document.querySelector(".instructions-con");
-const endGame = document.querySelector(".end-game")
+const endGame = document.querySelector(".end-game");
 const wonModal = document.querySelector(".won");
 const loseModal = document.querySelector(".lose");
 const numbersMapArr = [4, 3, 2, 4, 5, 9, 0, 3, 1, 2, 1, 4, 0, 7, 3];
@@ -113,6 +113,7 @@ startBtn.onclick = () => {
 };
 
 gotItBtn.onclick = () => {
+  instructions.classList.add("d-none");
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
   introSound.muted = true;
@@ -167,7 +168,7 @@ entrance.addEventListener("click", (e) => {
       e.target.style.setProperty("--color", " #494848");
       e.target.style.cssText += `scale:1;box-shadow: 4px 6px 12px 0px black;`;
       modalCon.classList.remove("d-none");
-      endGame.classList.remove("d-none")
+      endGame.classList.remove("d-none");
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
