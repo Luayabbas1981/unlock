@@ -307,6 +307,7 @@ main {
 }
 .start-btn {
   cursor: pointer;
+  scale:1.2;
 }
 .start-btn div {
   color: transparent;
@@ -391,6 +392,7 @@ main {
   }
   .start-btn {
     margin-left: -10%;
+    scale: 1;
   }
   .start-btn div {
     font-size: 2rem;
