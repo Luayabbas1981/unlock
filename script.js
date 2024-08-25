@@ -122,7 +122,7 @@ gotItBtn.onclick = () => {
   modalCon.classList.add("d-none");
   introSound.muted = true;
   timerInterval = setInterval(() => {
-    if(remainTime <= 50){
+    if(remainTime <= 60){
       timer.style.color = "red"
     }
     if (remainTime === 0) {
