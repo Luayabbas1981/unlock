@@ -16,11 +16,14 @@ let hintNum = [];
 // Game sounds
 const pressSound = document.querySelector(".btn-press-sound");
 const deleteSound = document.querySelector(".delete-press-sound");
-const introSound = document.querySelector(".opening-safe");
+const introSound = document.querySelector(".open-safe");
 // Game controls
 const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
 const replay = document.querySelector(".replay");
+const timer = document.querySelector(".timer span");
+let timerInterval = null;
+let remainTime = 240;
 // Game values
 let draftNum = null;
 let numberLength = 3;
@@ -118,6 +121,18 @@ gotItBtn.onclick = () => {
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
   introSound.muted = true;
+  timerInterval = setInterval(() => {
+    if(remainTime <= 50){
+      timer.style.color = "red"
+    }
+    if (remainTime === 0) {
+      modalCon.classList.remove("d-none");
+      loseModal.classList.remove("d-none");
+      replay.textContent = "TRY AGAIN";
+    }
+    remainTime--;
+    timer.textContent = remainTime;
+  }, 1000);
 };
 // Create right number
 function genUniqueNumbers(length) {
@@ -195,7 +210,6 @@ entrance.addEventListener("click", (e) => {
 
 draft.addEventListener("click", (e) => {
   if (!e.target.classList.contains("deleted")) {
-
   }
   e.target.classList.toggle("deleted");
   if (e.target.closest(".draft>div")) {
