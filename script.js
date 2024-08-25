@@ -114,6 +114,7 @@ startBtn.onclick = () => {
 };
 
 gotItBtn.onclick = () => {
+   introSound.play();
   instructions.classList.add("d-none");
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
