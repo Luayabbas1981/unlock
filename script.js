@@ -35,7 +35,18 @@ let uniqueArr;
 introSound.volume = 0.5;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
+introSound.muted = true;
 
+introSound
+  .play()
+  .then(() => {
+    setTimeout(() => {
+      introSound.muted = false; // Unmute after a delay
+    }, 3000); // Adjust the delay as needed
+  })
+  .catch((error) => {
+    console.error("Playback failed:", error);
+  });
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
@@ -97,9 +108,6 @@ deleteSound.volume = 1;
     entrance.appendChild(div);
   }
   genUniqueNumbers(numberLength);
-  setTimeout(() => {
-    introSound.play();
-  }, 3000);
 })();
 
 startBtn.onclick = () => {
@@ -201,6 +209,7 @@ entrance.addEventListener("click", (e) => {
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
+        introSound.muted = false;
         introSound.play();
       } else {
         loseModal.classList.remove("d-none");
