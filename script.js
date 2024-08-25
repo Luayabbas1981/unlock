@@ -122,10 +122,11 @@ gotItBtn.onclick = () => {
   modalCon.classList.add("d-none");
   introSound.muted = true;
   timerInterval = setInterval(() => {
-    if(remainTime <= 60){
-      timer.style.color = "red"
+    if (remainTime <= 60) {
+      timer.style.color = "red";
     }
     if (remainTime === 0) {
+      clearInterval(timerInterval);
       modalCon.classList.remove("d-none");
       loseModal.classList.remove("d-none");
       replay.textContent = "TRY AGAIN";
