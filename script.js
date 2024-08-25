@@ -36,9 +36,6 @@ introSound.volume = 0.5;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
 
-setTimeout(() => {
-  introSound.play();
-}, 3000);
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
@@ -100,6 +97,9 @@ setTimeout(() => {
     entrance.appendChild(div);
   }
   genUniqueNumbers(numberLength);
+  setTimeout(() => {
+    introSound.play();
+  }, 3000);
 })();
 
 startBtn.onclick = () => {
@@ -128,7 +128,7 @@ gotItBtn.onclick = () => {
     if (remainTime === 0) {
       clearInterval(timerInterval);
       modalCon.classList.remove("d-none");
-      endGame.classList.remove("d-none")
+      endGame.classList.remove("d-none");
       loseModal.classList.remove("d-none");
       replay.textContent = "TRY AGAIN";
     }
