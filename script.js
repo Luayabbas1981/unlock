@@ -90,7 +90,7 @@ deleteBtn.volume = 1;
   }
   genUniqueNumbers(numberLength);
   setTimeout(() => {
-    soundController(introSound);
+   introSound.play()
   }, 1000);
 })();
 

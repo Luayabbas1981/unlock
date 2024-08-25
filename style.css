@@ -41,7 +41,13 @@ body {
     background-size: 100% 100%;
   }
 }
-
+.replay {
+  color: transparent;
+  background: var(--letter-background);
+  background-clip: text;
+  font-size: 2rem;
+  cursor: pointer;
+}
 header {
   height: 10%;
 }
