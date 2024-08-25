@@ -35,18 +35,7 @@ let uniqueArr;
 introSound.volume = 0.5;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
-introSound.muted = true;
 
-introSound
-  .play()
-  .then(() => {
-    setTimeout(() => {
-      introSound.muted = false; // Unmute after a delay
-    }, 3000); // Adjust the delay as needed
-  })
-  .catch((error) => {
-    console.error("Playback failed:", error);
-  });
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
@@ -111,6 +100,7 @@ introSound
 })();
 
 startBtn.onclick = () => {
+  introSound.play();
   const startBtnLetters = document.querySelectorAll(".start-btn div");
   startBtnLetters.forEach((letter) => {
     letter.style.animation = "none";
@@ -209,7 +199,6 @@ entrance.addEventListener("click", (e) => {
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
-        introSound.muted = false;
         introSound.play();
       } else {
         loseModal.classList.remove("d-none");
