@@ -27,6 +27,7 @@ let numberLength = 3;
 let rightNumberArray = [];
 let rightNumber = null;
 let hints = [];
+let newNumbersArray = [];
 let uniqueArr;
 introSound.volume = 0.3;
 pressBtn.volume = 0.5;
@@ -98,8 +99,6 @@ deleteBtn.volume = 1;
   }, 3000);
 })();
 
-
-
 startBtn.onclick = () => {
   const startBtnLetters = document.querySelectorAll(".start-btn div");
   startBtnLetters.forEach((letter) => {
@@ -162,7 +161,16 @@ entrance.addEventListener("click", (e) => {
     soundController(deleteBtn);
   }
   if (e.target.classList.contains("enter") && display.textContent) {
+    const index8 =
+      newNumbersArray[8] !== undefined ? String(newNumbersArray[8]) : "";
+    const index5 =
+      newNumbersArray[5] !== undefined ? String(newNumbersArray[5]) : "";
+    const index2 =
+      newNumbersArray[2] !== undefined ? String(newNumbersArray[2]) : "";
+
+    rightNumber = index8 + index5 + index2;
     let givenNum = display.textContent;
+
     display.textContent = "";
     e.target.style.setProperty("--color", "#243cc0");
     e.target.style.cssText += `scale:0.85;box-shadow: 2px 2px 8px 0px black`;
@@ -205,7 +213,6 @@ function soundController(sound) {
 
 function getRandomizedNumbersArray(numbers) {
   let numberMap = new Map();
-  let newNumbersArray = [];
   numbers.forEach((_, index) => {
     const originalNumber = numbers[index];
     if (!numberMap.has(originalNumber)) {
@@ -222,14 +229,6 @@ function getRandomizedNumbersArray(numbers) {
     hint.textContent = newNumbersArray[index];
   });
   uniqueArr = [...new Set(newNumbersArray)];
-  const index8 =
-    newNumbersArray[8] !== undefined ? String(newNumbersArray[8]) : "";
-  const index5 =
-    newNumbersArray[5] !== undefined ? String(newNumbersArray[5]) : "";
-  const index2 =
-    newNumbersArray[2] !== undefined ? String(newNumbersArray[2]) : "";
-
-  rightNumber = index8 + index5 + index2;
 }
 
 replay.onclick = () => {
