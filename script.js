@@ -23,7 +23,7 @@ const gotItBtn = document.querySelector(".got-it-btn");
 const replay = document.querySelector(".replay");
 const timer = document.querySelector(".timer span");
 let timerInterval = null;
-let remainTime = 240;
+let remainTime = 180;
 // Game values
 let draftNum = null;
 let numberLength = 3;
@@ -36,6 +36,9 @@ introSound.volume = 0.5;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
 
+setTimeout(() => {
+  introSound.play();
+}, 3000);
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
@@ -97,9 +100,6 @@ deleteSound.volume = 1;
     entrance.appendChild(div);
   }
   genUniqueNumbers(numberLength);
-  setTimeout(() => {
-    introSound.play();
-  }, 3000);
 })();
 
 startBtn.onclick = () => {
@@ -122,12 +122,13 @@ gotItBtn.onclick = () => {
   modalCon.classList.add("d-none");
   introSound.muted = true;
   timerInterval = setInterval(() => {
-    if (remainTime <= 60) {
+    if (remainTime <= 30) {
       timer.style.color = "red";
     }
     if (remainTime === 0) {
       clearInterval(timerInterval);
       modalCon.classList.remove("d-none");
+      endGame.classList.remove("d-none")
       loseModal.classList.remove("d-none");
       replay.textContent = "TRY AGAIN";
     }
