@@ -93,10 +93,11 @@ deleteBtn.volume = 1;
     entrance.appendChild(div);
   }
   genUniqueNumbers(numberLength);
-  setTimeout(() => {
-    introSound.play();
-  }, 1000);
 })();
+
+setTimeout(() => {
+  introSound.play();
+}, 1000);
 
 startBtn.onclick = () => {
   const startBtnLetters = document.querySelectorAll(".start-btn div");
@@ -172,6 +173,7 @@ entrance.addEventListener("click", (e) => {
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
+        soundController(introSound);
       } else {
         loseModal.classList.remove("d-none");
         replay.textContent = "TRY AGAIN";
