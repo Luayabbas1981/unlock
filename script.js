@@ -99,7 +99,6 @@ deleteSound.volume = 1;
   genUniqueNumbers(numberLength);
   setTimeout(() => {
     introSound.play();
-    consol.log("hhh")
   }, 3000);
 })();
 
