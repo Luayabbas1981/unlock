@@ -14,8 +14,8 @@ let numbersUsedArr = [];
 let hintNum = [];
 
 // Game sounds
-const pressBtn = document.querySelector(".btn-press");
-const deleteBtn = document.querySelector(".delete-press");
+const pressSound = document.querySelector(".btn-press-sound");
+const deleteSound = document.querySelector(".delete-press-sound");
 const introSound = document.querySelector(".opening-safe");
 // Game controls
 const startBtn = document.querySelector(".start-btn");
@@ -29,9 +29,9 @@ let rightNumber = null;
 let hints = [];
 let newNumbersArray = [];
 let uniqueArr;
-introSound.volume = 0.3;
-pressBtn.volume = 0.5;
-deleteBtn.volume = 1;
+introSound.volume = 0.5;
+pressSound.volume = 0.5;
+deleteSound.volume = 1;
 
 (function () {
   // Hunts
@@ -145,8 +145,8 @@ entrance.addEventListener("click", (e) => {
     setTimeout(() => {
       e.target.style.cssText = `color: #0b4b6a; scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
-    pressBtn.currentTime = 0;
-    pressBtn.play();
+    pressSound.currentTime = 0;
+    pressSound.play();
   }
   if (e.target.classList.contains("delete") && display.textContent) {
     let displayArr = currentDisplayNumbers.split("");
@@ -159,8 +159,8 @@ entrance.addEventListener("click", (e) => {
       e.target.style.setProperty("--color", " #494848");
       e.target.style.cssText += `scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
-    deleteBtn.currentTime = 0;
-    deleteBtn.play();
+    deleteSound.currentTime = 0;
+    deleteSound.play();
   }
   if (e.target.classList.contains("enter") && display.textContent) {
     const index8 =
@@ -195,7 +195,7 @@ entrance.addEventListener("click", (e) => {
 
 draft.addEventListener("click", (e) => {
   if (!e.target.classList.contains("deleted")) {
-    soundController(deleteBtn);
+
   }
   e.target.classList.toggle("deleted");
   if (e.target.closest(".draft>div")) {
