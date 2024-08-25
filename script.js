@@ -145,7 +145,8 @@ entrance.addEventListener("click", (e) => {
     setTimeout(() => {
       e.target.style.cssText = `color: #0b4b6a; scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
-    soundController(pressBtn);
+    pressBtn.currentTime = 0;
+    pressBtn.play();
   }
   if (e.target.classList.contains("delete") && display.textContent) {
     let displayArr = currentDisplayNumbers.split("");
@@ -158,7 +159,8 @@ entrance.addEventListener("click", (e) => {
       e.target.style.setProperty("--color", " #494848");
       e.target.style.cssText += `scale:1;box-shadow: 4px 6px 12px 0px black;`;
     }, 200);
-    soundController(deleteBtn);
+    deleteBtn.currentTime = 0;
+    deleteBtn.play();
   }
   if (e.target.classList.contains("enter") && display.textContent) {
     const index8 =
@@ -182,7 +184,7 @@ entrance.addEventListener("click", (e) => {
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
-        soundController(introSound);
+        introSound.play();
       } else {
         loseModal.classList.remove("d-none");
         replay.textContent = "TRY AGAIN";
@@ -205,11 +207,6 @@ draft.addEventListener("click", (e) => {
     });
   }
 });
-
-function soundController(sound) {
-  sound.currentTime = 0;
-  sound.play();
-}
 
 function getRandomizedNumbersArray(numbers) {
   let numberMap = new Map();
