@@ -93,11 +93,12 @@ deleteBtn.volume = 1;
     entrance.appendChild(div);
   }
   genUniqueNumbers(numberLength);
+  setTimeout(() => {
+    introSound.play();
+  }, 3000);
 })();
 
-setTimeout(() => {
-  introSound.play();
-}, 1000);
+
 
 startBtn.onclick = () => {
   const startBtnLetters = document.querySelectorAll(".start-btn div");
