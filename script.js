@@ -23,7 +23,7 @@ const gotItBtn = document.querySelector(".got-it-btn");
 const replay = document.querySelector(".replay");
 const timer = document.querySelector(".timer span");
 let timerInterval = null;
-let remainTime = 180;
+let remainTime = 181;
 // Game values
 let draftNum = null;
 let numberLength = 3;
