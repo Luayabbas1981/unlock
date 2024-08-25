@@ -29,6 +29,18 @@ body {
     #e0e0e0 100%
   );
 }
+.won {
+  height: 60%;
+  background: url(./images/safe-locked.png) center no-repeat;
+  background-size: 100% 100%;
+  animation: open-safe 1s 2s linear forwards;
+}
+@keyframes open-safe {
+  to {
+    background: url(./images/safe-unlocked.png) center no-repeat;
+    background-size: 100% 100%;
+  }
+}
 
 header {
   height: 10%;

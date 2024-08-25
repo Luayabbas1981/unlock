@@ -29,7 +29,6 @@ pressBtn.volume = 0.5;
 deleteBtn.volume = 1;
 
 (function () {
-  soundController(introSound);
   // Hunts
   hintCons.forEach((hint) => {
     for (let i = 0; i < numberLength; i++) {
@@ -89,8 +88,10 @@ deleteBtn.volume = 1;
     }
     entrance.appendChild(div);
   }
-
   genUniqueNumbers(numberLength);
+  setTimeout(() => {
+    soundController(introSound);
+  }, 1000);
 })();
 
 startBtn.onclick = () => {
