@@ -6,6 +6,9 @@ const display = document.querySelector(".display");
 const modalCon = document.querySelector(".modal-con");
 const introduction = document.querySelector(".introduction");
 const instructions = document.querySelector(".instructions-con");
+const endGame = document.querySelector(".end-game")
+const wonModal = document.querySelector(".won");
+const loseModal = document.querySelector(".lose");
 const numbersMapArr = [4, 3, 2, 4, 5, 9, 0, 3, 1, 2, 1, 4, 0, 7, 3];
 let numbersUsedArr = [];
 let hintNum = [];
@@ -17,6 +20,7 @@ const introSound = document.querySelector(".opening-safe");
 // Game controls
 const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
+const replay = document.querySelector(".replay");
 // Game values
 let draftNum = null;
 let numberLength = 3;
@@ -90,7 +94,7 @@ deleteBtn.volume = 1;
   }
   genUniqueNumbers(numberLength);
   setTimeout(() => {
-   introSound.play()
+    introSound.play();
   }, 1000);
 })();
 
@@ -155,12 +159,22 @@ entrance.addEventListener("click", (e) => {
     soundController(deleteBtn);
   }
   if (e.target.classList.contains("enter") && display.textContent) {
+    let givenNum = display.textContent;
     display.textContent = "";
     e.target.style.setProperty("--color", "#243cc0");
     e.target.style.cssText += `scale:0.85;box-shadow: 2px 2px 8px 0px black`;
     setTimeout(() => {
       e.target.style.setProperty("--color", " #494848");
       e.target.style.cssText += `scale:1;box-shadow: 4px 6px 12px 0px black;`;
+      modalCon.classList.remove("d-none");
+      endGame.classList.remove("d-none")
+      if (givenNum == rightNumber) {
+        wonModal.classList.remove("d-none");
+        replay.textContent = "REPLAY";
+      } else {
+        loseModal.classList.remove("d-none");
+        replay.textContent = "TRY AGAIN";
+      }
     }, 200);
   }
 });
@@ -213,3 +227,7 @@ function getRandomizedNumbersArray(numbers) {
 
   rightNumber = index8 + index5 + index2;
 }
+
+replay.onclick = () => {
+  window.location.reload();
+};

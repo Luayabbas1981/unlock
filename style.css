@@ -41,6 +41,20 @@ body {
     background-size: 100% 100%;
   }
 }
+.lose {
+  height: 60%;
+  background: url(./images/safe-locked.png) center no-repeat;
+  background-size: 100% 100%;
+  animation: wrong-input 0.1s 1s 4 linear alternate;
+}
+@keyframes wrong-input {
+  from {
+    rotate: 10deg;
+  }
+  to {
+    rotate: -10deg;
+  }
+}
 .replay {
   color: transparent;
   background: var(--letter-background);
