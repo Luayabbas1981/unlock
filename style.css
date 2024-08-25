@@ -247,6 +247,9 @@ main {
 .modal-con {
   background-color: #000;
 }
+.introduction{
+  scale: 0.8;
+}
 .lock-con {
   position: absolute;
   left: 50%;
@@ -381,6 +384,7 @@ main {
   }
   .introduction {
     margin-left: 10%;
+    scale: 1;
   }
   .letter img {
     width: 100%;
