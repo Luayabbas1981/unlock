@@ -35,19 +35,7 @@ let uniqueArr;
 introSound.volume = 0.5;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
-introSound.muted = true;
 
-introSound.addEventListener('canplaythrough', () => {
-    introSound.play().then(() => {
-        introSound.muted = false; // Unmute after playback starts
-    }).catch(error => {
-        console.error("Playback failed:", error);
-    });
-});
-
-window.addEventListener('load', () => {
-    introSound.load(); // Start loading the audio
-});
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
@@ -210,7 +198,6 @@ entrance.addEventListener("click", (e) => {
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
         replay.textContent = "REPLAY";
-        introSound.muted = false;
         introSound.play();
       } else {
         loseModal.classList.remove("d-none");
