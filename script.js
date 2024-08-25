@@ -100,6 +100,7 @@ deleteSound.volume = 1;
 })();
 
 startBtn.onclick = () => {
+  introSound.play();
   const startBtnLetters = document.querySelectorAll(".start-btn div");
   startBtnLetters.forEach((letter) => {
     letter.style.animation = "none";
@@ -114,7 +115,6 @@ startBtn.onclick = () => {
 };
 
 gotItBtn.onclick = () => {
-   introSound.play();
   instructions.classList.add("d-none");
   gotItBtn.classList.add("d-none");
   modalCon.classList.add("d-none");
