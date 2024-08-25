@@ -37,16 +37,17 @@ pressSound.volume = 0.5;
 deleteSound.volume = 1;
 introSound.muted = true;
 
-introSound
-  .play()
-  .then(() => {
-    setTimeout(() => {
-      introSound.muted = false; // Unmute after a delay
-    }, 3000); // Adjust the delay as needed
-  })
-  .catch((error) => {
-    console.error("Playback failed:", error);
-  });
+introSound.addEventListener('canplaythrough', () => {
+    introSound.play().then(() => {
+        introSound.muted = false; // Unmute after playback starts
+    }).catch(error => {
+        console.error("Playback failed:", error);
+    });
+});
+
+window.addEventListener('load', () => {
+    introSound.load(); // Start loading the audio
+});
 (function () {
   // Hunts
   hintCons.forEach((hint) => {
