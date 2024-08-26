@@ -22,8 +22,10 @@ const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
 const replay = document.querySelector(".replay");
 const timer = document.querySelector(".timer span");
+const userTime = document.querySelector(".user-time");
 let timerInterval = null;
-let remainTime = 241;
+const time = 241;
+let remainTime = time;
 // Game values
 let draftNum = null;
 let numberLength = 3;
@@ -198,7 +200,10 @@ entrance.addEventListener("click", (e) => {
       endGame.classList.remove("d-none");
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
+        userTime.classList.remove("d-none");
+        userTime.children[0].textContent = time - remainTime;
         replay.textContent = "REPLAY";
+        introSound.muted = false;
         introSound.play();
       } else {
         loseModal.classList.remove("d-none");
