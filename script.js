@@ -34,7 +34,7 @@ let rightNumber = null;
 let hints = [];
 let newNumbersArray = [];
 let uniqueArr;
-introSound.volume = 0.3;
+introSound.volume = 0.2;
 pressSound.volume = 0.5;
 deleteSound.volume = 1;
 
