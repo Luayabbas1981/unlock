@@ -12,7 +12,14 @@
 body {
   height: 100dvh;
   overflow: hidden;
-  background: linear-gradient(55deg, #ffffff 4%, #d5d3d3 38%, #ffffff 71%, #e2dfdf 100%, #ffffff 101%);
+  background: linear-gradient(
+    55deg,
+    #ffffff 0%,
+    #dbdbdb 24%,
+    #ffffff 77%,
+    #ffffff 101%,
+    #ffffff 100%
+  );
   --letter-background: linear-gradient(
     177deg,
     #bcbcbc 0%,
@@ -26,7 +33,7 @@ body {
   height: 60%;
   background: url(./images/safe-locked.png) center no-repeat;
   background-size: 100% 100%;
-  animation: open-safe 1s 2s linear forwards;
+  animation: open-safe 1s 1s linear forwards;
 }
 @keyframes open-safe {
   to {
@@ -48,7 +55,8 @@ body {
     rotate: -10deg;
   }
 }
-.replay {
+.replay,
+.user-time {
   color: transparent;
   background: var(--letter-background);
   background-clip: text;
@@ -240,7 +248,7 @@ main {
 .modal-con {
   background-color: #000;
 }
-.introduction{
+.introduction {
   scale: 0.8;
 }
 .lock-con {
@@ -300,7 +308,7 @@ main {
 }
 .start-btn {
   cursor: pointer;
-  scale:1.2;
+  scale: 1.2;
 }
 .start-btn div {
   color: transparent;
@@ -385,7 +393,6 @@ main {
   }
   .start-btn {
     margin-left: -10%;
-    scale: 1;
   }
   .start-btn div {
     font-size: 2rem;
