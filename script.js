@@ -22,8 +22,10 @@ const startBtn = document.querySelector(".start-btn");
 const gotItBtn = document.querySelector(".got-it-btn");
 const replay = document.querySelector(".replay");
 const timer = document.querySelector(".timer span");
+const userTime = document.querySelector(".user-time");
 let timerInterval = null;
-let remainTime = 181;
+const time = 241;
+let remainTime = time;
 // Game values
 let draftNum = null;
 let numberLength = 3;
@@ -134,7 +136,7 @@ gotItBtn.onclick = () => {
     timer.textContent = remainTime;
   }, 1000);
 };
-// Create right number
+// Create array of different numbers
 function genUniqueNumbers(length) {
   const uniqueNumbers = new Set();
   while (uniqueNumbers.size < length) {
@@ -198,7 +200,10 @@ entrance.addEventListener("click", (e) => {
       endGame.classList.remove("d-none");
       if (givenNum == rightNumber) {
         wonModal.classList.remove("d-none");
+        userTime.classList.remove("d-none");
+        userTime.children[0].textContent = time - remainTime;
         replay.textContent = "REPLAY";
+        introSound.muted = false;
         introSound.play();
       } else {
         loseModal.classList.remove("d-none");
@@ -207,6 +212,7 @@ entrance.addEventListener("click", (e) => {
     }, 200);
   }
 });
+
 
 draft.addEventListener("click", (e) => {
   if (!e.target.classList.contains("deleted")) {
